@@ -13,7 +13,7 @@ def tree():
         temp = line.split()
         result[temp[0]] = temp[1:]
 
-    final = [('a', 0)]
+    final = [(data[0].split()[0], 0)]
     while final:
         temp = final.pop(0)
         if temp[0] in result:
