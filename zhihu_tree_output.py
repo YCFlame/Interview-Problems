@@ -1,14 +1,18 @@
 #! /usr/bin/env python
 # coding: utf-8
 
+
 def tree():
     result = {}
-    data = [
-        'a b c',
-        'b d e',
-        'c f',
-        'd g'
-    ]
+    data = []
+    while True:
+        i = raw_input()
+        if not i:
+            break
+
+        data.append(i)
+
+    print data
     for line in data:
         temp = line.split()
         result[temp[0]] = temp[1:]
