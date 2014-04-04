@@ -12,7 +12,6 @@ def tree():
 
         data.append(i)
 
-    print data
     for line in data:
         temp = line.split()
         result[temp[0]] = temp[1:]
