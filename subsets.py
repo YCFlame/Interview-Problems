@@ -7,8 +7,7 @@ import itertools
 
 def lasy_combination(l):
     length = len(l)
-    print '()'
-    for i in range(1, length + 1):
+    for i in range(length + 1):
         for c in itertools.combinations(l, i):
             print c
 
