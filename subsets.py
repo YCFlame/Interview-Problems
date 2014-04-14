@@ -5,11 +5,19 @@
 import itertools
 
 
-def lasy_combination(l):
+def call_combinations(l):
     length = len(l)
     for i in range(length + 1):
         for c in itertools.combinations(l, i):
             print c
+
+
+def call_permutations(l):
+    length = len(l)
+    for i in range(length + 1):
+        for p in itertools.permutations(l, i):
+            if sorted(p) == list(p):
+                print p
 
 
 def combination(l):
@@ -18,4 +26,4 @@ def combination(l):
 if __name__ == '__main__':
     l = raw_input()
     l = l.split()
-    lasy_combination(l)
+    call_permutations(l)
