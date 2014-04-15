@@ -15,9 +15,17 @@ def call_combinations(l):
 def call_permutations(l):
     length = len(l)
     for i in range(length + 1):
-        for p in itertools.permutations(l, i):
+        for p in itertools.permutations(range(length), i):
             if sorted(p) == list(p):
-                print p
+                print tuple(l[j] for j in p)
+
+
+def call_product(l):
+    length = len(l)
+    for i in range(length + 1):
+        for p in itertools.product(range(length), repeat=i):
+            if len(set(p)) == i and sorted(p) == list(p):
+                print tuple(l[j] for j in p)
 
 
 def combination(l):
@@ -26,4 +34,4 @@ def combination(l):
 if __name__ == '__main__':
     l = raw_input()
     l = l.split()
-    call_permutations(l)
+    call_product(l)
