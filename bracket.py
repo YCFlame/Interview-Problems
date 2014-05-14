@@ -12,8 +12,7 @@ def check(data):
     for i in data:
         if i in quotation:
             if in_quote:
-                length = len(stack)
-                temp = stack[length - 1]
+                temp = stack[len(stack) - 1]
                 if i == temp:
                     stack.pop()
                     in_quote = False
