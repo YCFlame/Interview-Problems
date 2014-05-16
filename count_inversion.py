@@ -15,7 +15,7 @@ def count_inversion(filename):
             while start < length:
                 current = i = start
                 j = start + step
-                while i < start + step and j < start + 2 * step and i < length and j < length:
+                while i < start + step and j < start + 2 * step and j < length:
                     if array[i] <= array[j]:
                         temp[current] = array[i]
                         i += 1
