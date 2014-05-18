@@ -25,7 +25,8 @@ def binary_search(data, target):
 # 以下两种算法因为使用了半开半闭区间，所以判断条件是 low < high，因为 data[high] 已经检查过或者不存在
 def first_match(data, target):
     length = len(data)
-    assert length > 0
+    if length == 0:
+        return -1
 
     low = 0
     high = length
