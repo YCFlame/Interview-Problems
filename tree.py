@@ -18,18 +18,6 @@ def build_tree_interacitve():
     pass
 
 
-def build_tree_pre_infix(pre_order, infix_order):
-    pass
-
-
-def build_tree_pre_post(pre_order, post_order):
-    pass
-
-
-def build_tree_infix_post(infix_order, post_order):
-    pass
-
-
 def pre_order_traverse(root):
     pass
 
