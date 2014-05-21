@@ -8,7 +8,7 @@ def recursive_quick_sort(array, start, end):
     i, j = start, end
     pivot = array[start]
     while i < j:
-        # 一定要先移动 j，否则遇到最大的在第一个的时候 i 就会移动到末尾与 j 重合
+        # 一定要先移动 j，否则遇到最小的在第一个的时候 i 与 j 不会交换，但是 pivot 和 i 会错误地交换
         while i < j and array[j] >= pivot:
             j -= 1
         while i < j and array[i] <= pivot:
@@ -17,6 +17,8 @@ def recursive_quick_sort(array, start, end):
             array[i], array[j] = array[j], array[i]
 
     array[start], array[i] = array[i], array[start]
+
+    print array
 
     recursive_quick_sort(array, start, i - 1)
     recursive_quick_sort(array, i + 1, end)
@@ -48,6 +50,6 @@ def non_recursive_quick_sort(array):
     return array
 
 if __name__ == '__main__':
-    array = [9, 4, 5, 3, 6, 2, 7, 8, 1]
+    array = [9, 4, 5, 3, 6, 2, 3, 7, 8, 1]
     print recursive_quick_sort(array, 0, len(array) - 1)
     print non_recursive_quick_sort(array)
