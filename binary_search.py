@@ -29,7 +29,9 @@ def first_match(data, target):
         return -1
 
     low = 0
+    # 开区间是为了处理长度为 1 的数组
     high = length
+    # 不加等号是为了避免在 low == high 且 data[mid] >= target 时陷入死循环
     while low < high:
         mid = low + (high - low) / 2
         if data[mid] < target:
@@ -70,4 +72,4 @@ def last_match(data, target):
 
 if __name__ == '__main__':
     data = [1, 2, 3, 3, 3, 5, 7, 9]
-    print first_match(data, 10)
+    print first_match(data, 2)
