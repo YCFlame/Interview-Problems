@@ -11,7 +11,7 @@ def binary_search(data, target):
     high = length - 1
     # 等号存在的原因是为了检查 target == data[high] 的情况
     while low <= high:
-        mid = low + (high - low) >> 1
+        mid = low + (high - low) / 2
         if data[mid] == target:
             return mid
         elif data[mid] < target:
@@ -33,7 +33,7 @@ def first_match(data, target):
     high = length
     # 不加等号是为了避免在 low == high 且 data[mid] >= target 时陷入死循环
     while low < high:
-        mid = low + (high - low) >> 1
+        mid = low + (high - low) / 2
         if data[mid] < target:
             low = mid + 1
         else:
