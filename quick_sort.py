@@ -5,23 +5,19 @@
 def recursive_quick_sort(array, start, end):
     if start >= end:
         return
-    i, j = start, end
+    i = j = start + 1
     pivot = array[start]
-    while i < j:
-        # 一定要先移动 j，否则遇到最小的在第一个的时候 i 与 j 不会交换，但是 pivot 和 i 会错误地交换
-        while i < j and array[j] >= pivot:
-            j -= 1
-        while i < j and array[i] <= pivot:
-            i += 1
-        if i < j:
+    while j <= end:
+        if array[j] < pivot:
             array[i], array[j] = array[j], array[i]
+            i += 1
 
-    array[start], array[i] = array[i], array[start]
+        j += 1
 
-    print array
+    array[start], array[i - 1] = array[i - 1], array[start]
 
-    recursive_quick_sort(array, start, i - 1)
-    recursive_quick_sort(array, i + 1, end)
+    recursive_quick_sort(array, start, i - 2)
+    recursive_quick_sort(array, i, end)
 
     return array
 
@@ -30,22 +26,21 @@ def non_recursive_quick_sort(array):
     stack = [(0, len(array) - 1)]
     while len(stack):
         start, end = stack.pop()
-        i, j = start, end
+        i = j = start + 1
         pivot = array[start]
-        while i < j:
-            while i < j and array[j] >= pivot:
-                j -= 1
-            while i < j and array[i] <= pivot:
-                i += 1
-            if i < j:
+        while j <= end:
+            if array[j] < pivot:
                 array[i], array[j] = array[j], array[i]
+                i += 1
 
-        array[start], array[i] = array[i], array[start]
+            j += 1
 
-        if start < i - 1:
-            stack.append((start, i - 1))
-        if i + 1 < end:
-            stack.append((i + 1, end))
+        array[start], array[i - 1] = array[i - 1], array[start]
+
+        if start < i - 2:
+            stack.append((start, i - 2))
+        if i < end:
+            stack.append((i, end))
 
     return array
 
