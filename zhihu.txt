@@ -1,0 +1,40 @@
+OAuth GAE NDB 的一堆玩意儿
+MySQL 索引, Redis 时间复杂度
+
+线程、进程、协程
+协程是自己主动 yield 的
+嗯，buzz 里面用了 gevent，就是这玩意儿
+异步指的回调，非阻塞指的进程是否挂起
+select poll epoll 区别及其时间复杂度 √
+
+姚钢强  21:26:57
+xss
+姚钢强  21:27:01
+xsrf
+
+防跨站攻击是吧
+
+进程间通信方式，socket 流程
+python tree 命令
+common
+
+归并排序 √
+
+天海太阳  21:30:39
+简历上的细节，好的
+天海太阳  21:31:14
+session 和 cookie 的区别 √
+
+descriptor √
+decorator √
+需要用类的方式写
+还是就函数写
+
+字母做 key 的改成大写 √
+__setitem__
+__setslice__
+
+
+Python 多线程为什么不能利用多核 GIL √
+
+遇到的困难和解决过程
