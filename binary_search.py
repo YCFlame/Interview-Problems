@@ -58,7 +58,7 @@ def last_match(data, target):
     while low < high:
         # 避免产生非法值，如 low = -1, high = 1 - 1 = 0, 则 low + (high - low) / 2 = -1
         # 亦即 [low, high] 时取 mid 是 high
-        mid = high - (high - low) >> 1
+        mid = high - (high - low) / 2
         if data[mid] > target:
             high = mid - 1
         else:
