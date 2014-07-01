@@ -12,26 +12,30 @@ def call_combinations(l):
             print c
 
 
-def call_permutations(l):
-    length = len(l)
-    for i in range(length + 1):
-        for p in itertools.permutations(range(length), i):
-            if sorted(p) == list(p):
-                print tuple(l[j] for j in p)
+def call_simple_combinations(l):
+    for p in simple_combinations(l):
+        print p
 
 
-def call_product(l):
+def simple_combinations(l):
+    for p in simple_permutations(l):
+        if sorted(p) == list(p):
+            yield tuple(l[j] for j in p)
+
+
+def simple_permutations(l):
     length = len(l)
     for i in range(length + 1):
         for p in itertools.product(range(length), repeat=i):
-            if len(set(p)) == i and sorted(p) == list(p):
-                print tuple(l[j] for j in p)
+            if len(set(p)) == i:
+                yield tuple(l[j] for j in p)
 
 
 def combination(l):
     pass
 
+
 if __name__ == '__main__':
     l = raw_input()
     l = l.split()
-    call_product(l)
+    call_simple_combinations(l)
